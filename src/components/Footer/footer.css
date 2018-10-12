@@ -1,0 +1,13 @@
+.footer-paper {
+    height: 25em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    border: solid black;
+}
+
+.footer-paper-text {
+    margin-top: 5%;
+    text-align: center;
+    color: black;
+    /*opacity: 0.8;*/
+}
