@@ -1,0 +1,20 @@
+.header-card {
+    height: 20em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: transparent;
+    border: solid black;
+}
+
+.header-card-text {
+    margin-top: 5%;
+    text-align: center;
+    color: black; /*to be changed later for background image */
+    /*opacity: 0.8;*/
+}
+
+.cards-container-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
