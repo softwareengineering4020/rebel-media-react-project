@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from '../Homepage/HomePage';
 import Login from '../Login/Login';
+import Register from '../Register/register';
 import PageNotFound from '../PageNotFound/PageNotFound';
 
 const Router = () => (

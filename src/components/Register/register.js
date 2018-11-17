@@ -14,6 +14,9 @@ import { TableRow } from '@material-ui/core';
 
 class Register extends Component {
     render() {
+        return(
+            <div>register</div>
+        );
     }
 }
 
