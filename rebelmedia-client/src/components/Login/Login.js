@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { PostData } from '../../services/PostData';
+import { Redirect } from 'react-router-dom';
+
 import '../CardComponent/card.css';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -13,10 +16,41 @@ import { TableRow } from '@material-ui/core';
 
 
 class Login extends Component {
+    constructor() {
+        super();
+        this.state = {
+            username: '',
+            password: '',
+            redirectToReferrer: false
+        };
+        this.login = this.login.bind(this);
+        this.onChange = this.onChange.bind(this);
+    }
+
+    login() {
+        if (this.state.username && this.state.password) {
+            PostData('login', this.state).then((result) => {
+                console.log('test');
+                let responseJson = result;
+                console.log(responseJson);
+                if (responseJson.userData) {
+                    sessionStorage.setItem('userData', JSON.stringify(responseJson));
+                    this.setState({redirectToReferrer: true});
+                }
+            });
+        }
+    }
+
+    onChange(e) {
+        this.setState({[e.target.name]:e.target.value});
+    }
+
     render() {
-        const {image, text} = this.props;
+        if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
+            return (<Redirect to={'/'} />);
+        }
+
         return(
-           
             <Card className="card-container">
                 <CardActionArea>
                     <CardMedia>
@@ -32,18 +66,18 @@ class Login extends Component {
 <form>
   <label>
     Username: 
-    <input type="text" name="Name" />
+    <input type="text" name="username" onChange={this.onChange} />
   </label>
   <label>
      Password:  
-    <input type="text" name="Pass" />
+    <input type="password" name="password" onChange={this.onChange} />
   </label>
 </form>
 </div>
 <div><Button size="small">Register</Button></div>
 
 <div className="noidea-flex">
-<Button size="small">Sign In</Button>
+<Button size="small" onClick={this.login}>Sign In</Button>
 </div>               
 </CardActions>
                 </Card>

@@ -11,13 +11,13 @@ class App extends Component {
               <Header className="header-color" title="Rebel Media Entertainment" scroll>
                   <Navigation>
                     <Link to="/">Home</Link>
-                    <Link to="/login">Login</Link>
+                    <Link to="/welcome">Login</Link>
                   </Navigation>
               </Header>
               <Drawer title="Rebel Media">
                   <Navigation>
                     <Link to="/">Home</Link>
-                    <Link to="/login">Login</Link>
+                    <Link to="/welcome">Login</Link>
                   </Navigation>
               </Drawer>
               <Content>
