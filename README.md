@@ -7,15 +7,16 @@ To use this project you need to do the following...
 In the first instance of bash: 
 
 A. Start the development server for the client side:
-    1. npm i
-    2. cd rebelmedia-client
+
+    1. cd rebelmedia-client
+    2. npm i
     3. npm start
 
 In the second instance of bash:
 
 B. Start the backend server:
 
-    1. composer install
-    2. cd rebelmedia-server
+    1. cd rebelmedia-server
+    2. composer install
     3. php bin/console server:start
     4. yes
