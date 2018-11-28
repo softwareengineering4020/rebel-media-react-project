@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PostData } from '../../services/PostData';
 import { Redirect } from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
 import '../CardComponent/card.css';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -70,7 +70,9 @@ class Login extends Component {
   </label>
 </form>
 </div>
+<Link to= '/register'>
 <div><Button size="small">Register</Button></div>
+</Link>
 
 <div className="noidea-flex">
 <Button size="small" onClick={this.login}>Sign In</Button>

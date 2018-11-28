@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import Footer from '../Footer/Footer';
 import CardComponent from '../CardComponent/CardComponent';
+import {Link} from 'react-router-dom';
 
 /* Material-UI imports */
 import Paper from '@material-ui/core/Paper';
@@ -33,9 +34,17 @@ class HomePage extends Component {
           <h1 style={{textAlign:'center'}}>Welcome to Rebel Media</h1>
           <p>This is the body of the website</p>
           <div className="cards-container-flex">
-          <CardComponent text="This is text1"/>
-          <CardComponent text="This is text2"/>
-          <CardComponent text="This is text3"/>
+          Link to= '/featured'>
+          <Link>
+<CardComponent text="Featured"/>
+</Link>
+ <Link to= '/rankings'> 
+<CardComponent text="Rankings"/>
+</Link>
+<Link to= '/forums'>
+<CardComponent text="Forum"/>
+</Link>
+
           </div>
         <Footer />
         </div>
