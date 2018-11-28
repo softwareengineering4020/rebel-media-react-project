@@ -1,21 +1,48 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Movies;
+use App\Repository\MovieRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class MovieController extends ApiController
 {
     /**
-    * @Route("/movies")
+    * @Route("/movies", methods="GET")
     */
-    public function moviesAction()
+    public function index(MovieRepository $movieRepository)
     {
-        return $this->respond([
-            [
-                'title' => 'The Princess Bride',
-                'count' => 0
-            ]
-        ]);
+        $movies = $movieRepository->transformAll();
+
+        return $this->respond($movies);
+    }    
+
+    /**
+    * @Route("/movies", methods="POST")
+    */
+    public function create(Request $request, MovieRepository $movieRepository, EntityManagerInterface $em)
+    {
+        $request = $this->transformJsonBody($request);
+        if (! $request) {
+            return $this->respondValidationError('Please provide a valid request!');
+        }
+
+        // validate the title
+        if (! $request->get('title')) {
+            return $this->respondValidationError('Please provide a title!');
+        }
+
+        // persist the new movie
+        $movie = new Movie;
+        $movie->setTitle($request->get('title'));
+        $movie->setCount(0);
+        $em->persist($movie);
+        $em->flush();
+
+        return $this->respondCreated($movieRepository->transform($movie));
     }
 }
 

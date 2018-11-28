@@ -4,6 +4,7 @@ import HomePage from '../Homepage/HomePage';
 import Welcome from '../Welcome/Welcome';
 import Login from '../Login/Login';
 import PageNotFound from '../PageNotFound/PageNotFound';
+import Movies from '../Movies/Movies';
 import Users from '../Users/Users';
 
 const Router = () => (
@@ -12,6 +13,7 @@ const Router = () => (
         {/*<Route exact path="/register" component={Register} />*/}
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/movies" component={Movies} />
         <Route exact path="/users" component={Users} />
         <Route path='*' component={PageNotFound} />
     </Switch>
