@@ -11,9 +11,42 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import { TableRow } from '@material-ui/core';
 
-
 class Register extends Component {
     render() {
+        return(
+            <div>
+                <h1>Sign Up Today!</h1>
+            <form>
+            <label>
+                <div>
+              Enter a username: 
+              <input type="text" name="Name" />
+              </div>
+            </label>
+            <label>
+                <div>
+               Enter a password:  
+              <input type="text" name="Pass" />
+              </div>
+            </label>
+            <label>
+            <div>
+               Confirm password:  
+              <input type="text" name="Pass" />
+              </div>
+            </label>
+            <label>
+                <div>
+               Enter an email:  
+              <input type="text" name="Pass" />
+              </div>
+            </label>
+            <div>
+            <button size = "medium"> Submit </button>
+            </div>
+          </form>
+          </div>
+        )
     }
 }
 
