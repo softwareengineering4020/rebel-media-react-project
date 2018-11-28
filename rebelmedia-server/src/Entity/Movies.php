@@ -7,14 +7,14 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MovieRepository")
  */
-class Movie
+class Movies
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private $movies_id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -23,7 +23,7 @@ class Movie
 
     public function getId(): ?int
     {
-        return $this->id;
+        return $this->movies_id;
     }
 
     public function getTitle(): ?string

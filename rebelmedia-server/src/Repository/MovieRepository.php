@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Movie;
+use App\Entity\Movies;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
@@ -16,7 +16,27 @@ class MovieRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Movie::class);
+        parent::__construct($registry, Movies::class);
+    }
+
+    public function transform(Movies $movies)
+    {
+        return [
+            'movies_id'    => (int) $movies->getId(),
+            'title'        => (string) $movies->getTitle()
+        ];
+    }
+
+    public function transformAll()
+    {
+        $movies = $this->findAll();
+        $moviesArray = [];
+
+        foreach($movies as $movie) {
+            $moviesArray[] = $this->transform($movie);
+        }
+
+        return $moviesArray;
     }
 
     // /**

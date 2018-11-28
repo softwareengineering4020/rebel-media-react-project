@@ -12,12 +12,16 @@ class App extends Component {
                   <Navigation>
                     <Link to="/">Home</Link>
                     <Link to="/welcome">Login</Link>
+                    <Link to="/users">Users</Link>
+                    <Link to="/movies">Movies</Link>
                   </Navigation>
               </Header>
               <Drawer title="Rebel Media">
                   <Navigation>
                     <Link to="/">Home</Link>
                     <Link to="/welcome">Login</Link>
+                    <Link to="/users">Users</Link>
+                    <Link to="/movies">Movies</Link>
                   </Navigation>
               </Drawer>
               <Content>
