@@ -7,7 +7,7 @@ class Welcome extends Component {
         <div className="medium-12 columns">
         <h2 id="welcomeText">Make people fall in love with your ideas</h2>
         <a href="/login" className="button">Login</a>
-        <a href="/signup" className="button success">Signup</a>
+        <a href="/register" className="button success">Register</a>
         </div>
         </div>
         );

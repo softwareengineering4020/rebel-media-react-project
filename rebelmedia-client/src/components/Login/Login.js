@@ -26,7 +26,6 @@ class Login extends Component {
     login() {
         if (this.state.username && this.state.password) {
             PostData('login', this.state).then((result) => {
-                console.log('test');
                 let responseJson = result;
                 console.log(responseJson);
                 if (responseJson.userData) {
@@ -70,7 +69,7 @@ class Login extends Component {
   </label>
 </form>
 </div>
-<Link to= '/register'>
+<Link to='/register'>
 <div><Button size="small">Register</Button></div>
 </Link>
 

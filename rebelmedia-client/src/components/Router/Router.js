@@ -9,12 +9,13 @@ import Forums from '../Forums/Forums';
 import Movies from '../Movies/Movies';
 import Users from '../Users/Users';
 import Featured from '../Featured/Featured';
+import Register from '../Register/Register';
 
 
 const Router = () => (
     <Switch>
         <Route exact path="/" component={HomePage} />
-        {/*<Route exact path="/register" component={Register} />*/}
+        <Route exact path="/register" component={Register} />
         <Route exact path="/welcome" component={Welcome} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/movies" component={Movies} />

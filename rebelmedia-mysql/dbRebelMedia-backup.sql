@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `dbrebelmedia` /*!40100 DEFAULT CHARACTER SET utf
 USE `dbrebelmedia`;
 -- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
--- Host: localhost    Database: dbrebelmedia
+-- Host: 127.0.0.1    Database: dbrebelmedia
 -- ------------------------------------------------------
 -- Server version	8.0.13
 
@@ -285,7 +285,7 @@ DROP TABLE IF EXISTS `migration_versions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `migration_versions` (
-  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `version` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -586,11 +586,11 @@ CREATE TABLE `user` (
   `name` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `facebook_profile_link` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `twitter_profile_link` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `chat_status` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'offline',
+  `facebook_profile_link` longtext COLLATE utf8_unicode_ci,
+  `twitter_profile_link` longtext COLLATE utf8_unicode_ci,
+  `chat_status` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,7 +599,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline');
+INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline'),(13,'test','test@test.com','test',NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -612,4 +612,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-28 12:30:11
+-- Dump completed on 2018-11-29  9:47:50
