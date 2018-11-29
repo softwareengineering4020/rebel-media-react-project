@@ -11,7 +11,8 @@ class App extends Component {
               <Header className="header-color" title="Rebel Media Entertainment" scroll>
                   <Navigation>
                     <Link to="/">Home</Link>
-                    <Link to="/welcome">Login</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
                     <Link to="/users">Users</Link>
                     <Link to="/movies">Movies</Link>
                   </Navigation>
@@ -19,7 +20,8 @@ class App extends Component {
               <Drawer title="Rebel Media">
                   <Navigation>
                     <Link to="/">Home</Link>
-                    <Link to="/welcome">Login</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
                     <Link to="/users">Users</Link>
                     <Link to="/movies">Movies</Link>
                   </Navigation>

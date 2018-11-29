@@ -1,8 +1,8 @@
 export function PostData(type, userData) {
-let BaseURL = 'http://localhost:8080/api/login/';
+let BaseURL = 'http://localhost:8000/';
 
 return new Promise((resolve, reject) => {
-    fetch(BaseURL, {
+    fetch(BaseURL+type, {
         method: 'POST',
         body: JSON.stringify(userData)
     })

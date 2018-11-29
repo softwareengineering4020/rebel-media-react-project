@@ -25,7 +25,10 @@ class UserRepository extends ServiceEntityRepository
             'user_id'   => (int) $users->getId(),
             'name'      => (string) $users->getName(),
             'email'     => (string) $users->getEmail(),
-            'password'  => (string) $users->getPassword()
+            'password'  => (string) $users->getPassword(),
+            'facebook_profile_link' => (string) $users->getFacebookProfileLink(),
+            'twitter_profile_link' => (string) $users->getTwitterProfileLink(),
+            'chat_status' => (string) $users->getChatStatus()
         ];
     }
 
@@ -39,6 +42,13 @@ class UserRepository extends ServiceEntityRepository
         }
 
         return $usersArray;
+    }
+
+    public function findUser()
+    {
+        $user = $this->findOneBy(array('email' => email, 'password' => $password));
+        $user = $this->transform($user);
+        return $user;   
     }
 
     // /**

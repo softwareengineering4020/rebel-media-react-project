@@ -34,17 +34,15 @@ class HomePage extends Component {
           <h1 style={{textAlign:'center'}}>Welcome to Rebel Media</h1>
           <p>This is the body of the website</p>
           <div className="cards-container-flex">
-          Link to= '/featured'>
-          <Link>
-<CardComponent text="Featured"/>
-</Link>
- <Link to= '/rankings'> 
-<CardComponent text="Rankings"/>
-</Link>
-<Link to= '/forums'>
-<CardComponent text="Forum"/>
-</Link>
-
+          <Link to= '/featured'>
+          <CardComponent text="Featured"/>
+          </Link>
+          <Link to= '/rankings'> 
+          <CardComponent text="Rankings"/>
+          </Link>
+          <Link to= '/forums'>
+          <CardComponent text="Forum"/>
+          </Link>
           </div>
         <Footer />
         </div>
