@@ -9,7 +9,7 @@ import Forums from '../Forums/Forums';
 import Movies from '../Movies/Movies';
 import Users from '../Users/Users';
 import Featured from '../Featured/Featured';
-import Register from '../Register/Register';
+import Register from '../Register/register';
 
 
 const Router = () => (
