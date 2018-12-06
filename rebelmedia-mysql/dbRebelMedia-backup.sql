@@ -590,7 +590,7 @@ CREATE TABLE `user` (
   `twitter_profile_link` longtext COLLATE utf8_unicode_ci,
   `chat_status` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,8 +599,35 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline'),(13,'test','test@test.com','test',NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline'),(17,'test1345','test238@test.com','test3245',NULL,NULL,NULL),(13,'test','test@test.com','test',NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL),(15,'test','test','test',NULL,NULL,NULL),(16,'test','test1234@test.com','test',NULL,NULL,NULL),(18,'Nikolas2','test@test.com','test2',NULL,NULL,NULL),(19,'test24552','test53e444@test.com','test',NULL,NULL,NULL),(20,'test2408028','test2425243@test.com','test422',NULL,NULL,NULL),(21,'test2424254','testuser24241@test.com','test25452',NULL,NULL,NULL),(22,'test2424254','test2454@test.com','test24',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_movies`
+--
+
+DROP TABLE IF EXISTS `user_movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `user_movies` (
+  `row_id` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `movieTitle` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `movieDescription` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  PRIMARY KEY (`row_id`),
+  UNIQUE KEY `user_id_UNIQUE` (`row_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_movies`
+--
+
+LOCK TABLES `user_movies` WRITE;
+/*!40000 ALTER TABLE `user_movies` DISABLE KEYS */;
+INSERT INTO `user_movies` VALUES (1,'Nikolas','Jurassic Park',NULL),(2,'Nikolas','Jurassic Park','This is a movie about dinosaurs breaking out'),(3,'Nikolas','Jurassic Park 2','This is a second movie about dinosaurs breaking out'),(4,'Nikolas','Jurassic Park 3','This is a third movie about dinosaurs breaking out');
+/*!40000 ALTER TABLE `user_movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -612,4 +639,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-29  9:47:50
+-- Dump completed on 2018-12-06 12:36:56
