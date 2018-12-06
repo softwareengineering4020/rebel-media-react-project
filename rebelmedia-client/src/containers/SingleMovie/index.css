@@ -1,0 +1,18 @@
+.show-image {
+    height: 400px;
+}
+
+.movie-container {
+    margin: auto;
+    border: 1px solid black;
+    width: 50%;
+    height: 100%;
+}
+
+.movie-container h1 {
+    text-align: center;
+}
+
+.movie-genre {
+    text-align: center;
+}
