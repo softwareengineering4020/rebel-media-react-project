@@ -1,0 +1,53 @@
+.card-container {
+    background: rgb(255, 255, 255);
+    box-shadow: 5px 0px 15px rgba(113, 106, 202, 0.11);
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: 20em;
+    height: 100%;
+}
+
+.card-login-header {
+    flex: 0.5;
+    display: flex;
+    margin-left: 3em;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding-bottom: 0.5em;
+    justify-content: center;
+}
+
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-textboxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+.card-textboxes-email {
+    display: flex;
+    margin: auto;
+    padding-bottom: 1em;
+
+}
+
+.card-textboxes-username {
+    display: flex;
+    margin: auto;
+    padding-bottom: 1em;
+}
+
+.card-textboxes-password {
+    display: flex;
+    margin: auto;
+}
+
+.card-buttons {
+    display: flex;
+    margin-top: 1em;
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { API_BASE_URL } from '../../config';
 import { Redirect } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import './register.css';
 
 class Register extends Component {
     constructor() {
@@ -14,7 +16,7 @@ class Register extends Component {
     }
 
     onChange = (e) => {
-        this.setState({ [e.target.name] : e.target.value });
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     handleClear = () => {
@@ -39,30 +41,38 @@ class Register extends Component {
                 'Content-Type': 'application/json'
             }
         }).then(res => console.log('Registration success'))
-        .then(this.setState({ redirectToReferrer: true }))
+            .then(this.setState({ redirectToReferrer: true }))
     }
 
     render() {
-        const {password, email, name} = this.state;
-        return(
-            <div>
-                <h1>Registration Form</h1>
-                    <div>
-                        <label>Enter an email:</label>
-                        <input type="text" name="email" required="required" value={email} onChange={this.onChange} />
+        const { password, email, name } = this.state;
+        return (
+            <div className='card-container'>
+                <div className="card-content">
+                    <div className="card-login-header">
+                        Register
+                </div>
+                    <div className="card-textboxes">
+                        <div className="card-textboxes-email">
+                            <label>Email:</label>
+                            <input type="text" name="email" required="required" value={email} onChange={this.onChange} />
+                        </div>
+                        <div className='card-textboxes-username'>
+                            <label>Username:</label>
+                            <input type="text" name="name" required="required" value={name} onChange={this.onChange} />
+                        </div>
+                        <div className='card-textboxes-password'>
+                            <label>Password:</label>
+                            <input type="password" name="password" required="required" value={password} onChange={this.onChange} />
+                        </div>
                     </div>
-                    <div>
-                        <label>Enter a username:</label>
-                        <input type="text" name="name" required="required" value={name} onChange={this.onChange} />
+                    <div className="card-buttons">
+                        <Button size="medium" onClick={this.handleSubmit}>Register</Button>
+                        <Button size="medium" onClick={this.handleClear}>Clear</Button>
+                        {this.state.redirectToReferrer && <Redirect to='/' />}
                     </div>
-                    <div>
-                        <label>Enter a password:</label>
-                        <input type="password" name="password" required="required" value={password} onChange={this.onChange} />
-                    </div>
-                    <button size="medium" onClick={this.handleSubmit}>Submit</button>
-                    <button size="medium" onClick={this.handleClear}>Clear</button>
-                    { this.state.redirectToReferrer && <Redirect to='/' /> }
-          </div>
+                </div>
+            </div>
         )
     }
 }

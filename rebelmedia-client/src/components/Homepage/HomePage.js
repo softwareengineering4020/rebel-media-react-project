@@ -41,7 +41,7 @@ class HomePage extends Component {
         </Paper>
         </div>
           <div>
-          <h1 style={{textAlign:'center'}}>Welcome to Rebel Media {username ? ', ' + username : ''}</h1>
+          <h1 style={{textAlign:'center'}}>Welcome to Rebel Media{username ? ', ' + username : ''}</h1>
           <p>This is the body of the website</p>
           <div className="cards-container-flex">
           <Link to= '/featured'>
