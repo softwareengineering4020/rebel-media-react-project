@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { PostData } from '../../services/PostData';
-import { Redirect } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { API_BASE_URL } from '../../config';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {updateUser} from '../../actions/login';
+import HomePage from '../Homepage/HomePage';
 import '../CardComponent/card.css';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,78 +15,101 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 class Login extends Component {
-    constructor() {
-        super();
-        this.state = {
-            username: '',
+
+    constructor(props) {
+        super(props);
+        this.state ={
+            users: null,
+            user: '',
             password: '',
-            redirectToReferrer: false
-        };
-        this.login = this.login.bind(this);
-        this.onChange = this.onChange.bind(this);
+            redirectToReferrer: false,
+            isLoading: null
+        }
+        this.onUpdateUser = this.onUpdateUser.bind(this);
     }
 
-    login() {
-        if (this.state.username && this.state.password) {
-            PostData('login', this.state).then((result) => {
-                let responseJson = result;
-                console.log(responseJson);
-                if (responseJson.userData) {
-                    sessionStorage.setItem('userData', JSON.stringify(responseJson));
-                    this.setState({redirectToReferrer: true});
-                }
-            });
+    componentDidMount() {
+        this.fetchUsers();
+    }
+    
+    async fetchUsers() {
+        if (!this.state.users) {
+            try {
+                this.setState({ isLoading: true });
+                const response = await fetch(API_BASE_URL + '/users', {
+                    mode: 'cors'
+                });
+                const data = await response.json();
+                this.setState({ users: data, isLoading: false });
+            } catch (err) {
+                this.setState({ isLoading: false });
+                console.log(err);
+            }
         }
     }
+    
+    setRedirect = () => {
+        this.setState({ redirectToReferrer: true });
+    }
 
-    onChange(e) {
-        this.setState({[e.target.name]:e.target.value});
+    onUpdateUser(e) {
+       this.props.onUpdateUser(e.target.value);
+       this.setState({ user: e.target.value });
+    }
+
+    onPasswordChange = e => {
+        this.setState({ password: e.target.value })
     }
 
     render() {
+        const { users, user, password } = this.state;
+        let userFound = false;
+
+        users && users.map(u =>
+            u.name === user && u.password === password
+                ? userFound = true
+                : console.log('Could not find')
+        );
+
         if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
+            <HomePage {...this.props} />
             return (<Redirect to={'/'} />);
         }
 
-        return(
+        console.log(this.props);
+        return (
             <Card className="card-container">
                 <CardActionArea>
-                    <CardMedia>
-                    </CardMedia>
+                    <CardMedia></CardMedia>
                 </CardActionArea>
                 <CardContent>
                     <Typography color="textSecondary" gutterBottom>
-                    
+
                     </Typography>
+                    <label>Username:</label>
+                    <input type="text" name="username" onChange={this.onUpdateUser} />
+                    <label>Password:</label>
+                    <input type="password" name="password" onChange={this.onPasswordChange} />
                 </CardContent>
                 <CardActions>
-<div className="card-container">
-<form>
-  <label>
-    Username: 
-    <input type="text" name="username" onChange={this.onChange} />
-  </label>
-  <label>
-     Password:  
-    <input type="password" name="password" onChange={this.onChange} />
-  </label>
-</form>
-</div>
-<Link to='/register'>
-<div><Button size="small">Register</Button></div>
-</Link>
-
-<div className="noidea-flex">
-<Button size="small" onClick={this.login}>Sign In</Button>
-</div>               
-</CardActions>
-                </Card>
-                 
-            
-            );
+                    <Link to='/register'>
+                        <Button size="small">Register</Button>
+                    </Link>
+                    <Button size="small" onClick={this.setRedirect} disabled={!userFound}>Sign In</Button>
+                </CardActions>
+            </Card>
+        );
     }
 }
 
+const mapStateToProps = state => ({
+    user: state.user
+});
 
+const mapActionsToProps = (dispatch, props) => {
+    return bindActionCreators({
+        onUpdateUser: updateUser
+    }, dispatch);
+};
 
-export default Login;
+export default connect(mapStateToProps, mapActionsToProps)(Login);
