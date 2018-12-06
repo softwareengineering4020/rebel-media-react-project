@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Login from './components/Login/Login';
 import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -16,14 +15,13 @@ const allReducers = combineReducers({
 })
 
 const store = createStore(
-    allReducers, 
+    allReducers,
     {
         user: ''
-    },
-    window.devToolsExtension && window.devToolsExtension()
+    }
 );
 
-ReactDOM.render( 
-    <Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>, 
-     document.getElementById('root')
+ReactDOM.render(
+    <Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>,
+    document.getElementById('root')
 );

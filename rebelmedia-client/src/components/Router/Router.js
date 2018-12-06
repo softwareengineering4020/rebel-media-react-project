@@ -11,8 +11,7 @@ import Users from '../Users/Users';
 import Featured from '../Featured/Featured';
 import Register from '../Register/register';
 
-
-const Router = () => (
+const Router = (props) => (
     <Switch>
         <Route exact path="/" render={(props) => <HomePage {...props} />}/>
         <Route exact path="/register" component={Register} />
