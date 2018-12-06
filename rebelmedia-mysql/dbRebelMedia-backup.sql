@@ -586,9 +586,10 @@ CREATE TABLE `user` (
   `name` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `facebook_profile_link` longtext COLLATE utf8_unicode_ci,
-  `twitter_profile_link` longtext COLLATE utf8_unicode_ci,
-  `chat_status` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `facebook_profile_link` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `twitter_profile_link` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+  `chat_status` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `is_admin` bit(1) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -599,7 +600,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline'),(17,'test1345','test238@test.com','test3245',NULL,NULL,NULL),(13,'test','test@test.com','test',NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL),(15,'test','test','test',NULL,NULL,NULL),(16,'test','test1234@test.com','test',NULL,NULL,NULL),(18,'Nikolas2','test@test.com','test2',NULL,NULL,NULL),(19,'test24552','test53e444@test.com','test',NULL,NULL,NULL),(20,'test2408028','test2425243@test.com','test422',NULL,NULL,NULL),(21,'test2424254','testuser24241@test.com','test25452',NULL,NULL,NULL),(22,'test2424254','test2454@test.com','test24',NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline',NULL),(17,'test1345','test238@test.com','test3245',NULL,NULL,NULL,NULL),(13,'test','test@test.com','test',NULL,NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL,NULL),(15,'test','test','test',NULL,NULL,NULL,NULL),(16,'test','test1234@test.com','test',NULL,NULL,NULL,NULL),(18,'Nikolas2','test@test.com','test2',NULL,NULL,NULL,NULL),(19,'test24552','test53e444@test.com','test',NULL,NULL,NULL,NULL),(20,'test2408028','test2425243@test.com','test422',NULL,NULL,NULL,NULL),(21,'test2424254','testuser24241@test.com','test25452',NULL,NULL,NULL,NULL),(22,'test2424254','test2454@test.com','test24',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -617,7 +618,7 @@ CREATE TABLE `user_movies` (
   `movieDescription` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
   PRIMARY KEY (`row_id`),
   UNIQUE KEY `user_id_UNIQUE` (`row_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -626,7 +627,7 @@ CREATE TABLE `user_movies` (
 
 LOCK TABLES `user_movies` WRITE;
 /*!40000 ALTER TABLE `user_movies` DISABLE KEYS */;
-INSERT INTO `user_movies` VALUES (1,'Nikolas','Jurassic Park',NULL),(2,'Nikolas','Jurassic Park','This is a movie about dinosaurs breaking out'),(3,'Nikolas','Jurassic Park 2','This is a second movie about dinosaurs breaking out'),(4,'Nikolas','Jurassic Park 3','This is a third movie about dinosaurs breaking out');
+INSERT INTO `user_movies` VALUES (1,'Nikolas','Jurassic Park',NULL),(2,'Nikolas','Jurassic Park','This is a movie about dinosaurs breaking out'),(3,'Nikolas','Jurassic Park 2','This is a second movie about dinosaurs breaking out'),(4,'Nikolas','Jurassic Park 3','This is a third movie about dinosaurs breaking out'),(5,'Nikolas','Top Gun','For Lieutenant Pete \'Maverick\' Mitchell and his friend and co-pilot Nick \'Goose\' Bradshaw, being accepted into an elite training school for fighter pilots is a dream come true. But a tragedy, as well as personal demons, will threaten Pete\'s dreams of becoming an ace pilot.'),(6,'Nikolas','Jurassic World','Twenty-two years after the events of Jurassic Park, Isla Nublar now features a fully functioning dinosaur theme park, Jurassic World, as originally envisioned by John Hammond.'),(7,'test','Lethal Weapon','Veteran buttoned-down LAPD detective Roger Murtaugh is partnered with unhinged cop Martin Riggs, who -- distraught after his wife\'s death -- has a death wish and takes unnecessary risks with criminals at every turn. The odd couple embark on their first homicide investigation as partners, involving a young woman known to Murtaugh with ties to a drug and prostitution ring.');
 /*!40000 ALTER TABLE `user_movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -639,4 +640,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-06 12:36:56
+-- Dump completed on 2018-12-06 17:25:35

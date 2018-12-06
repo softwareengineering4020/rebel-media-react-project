@@ -28,7 +28,8 @@ class UserRepository extends ServiceEntityRepository
             'password'  => (string) $users->getPassword(),
             'facebook_profile_link' => (string) $users->getFacebookProfileLink(),
             'twitter_profile_link' => (string) $users->getTwitterProfileLink(),
-            'chat_status' => (string) $users->getChatStatus()
+            'chat_status' => (string) $users->getChatStatus(),
+            'isAdmin'   => (int) $users->getIsAdmin()
         ];
     }
 

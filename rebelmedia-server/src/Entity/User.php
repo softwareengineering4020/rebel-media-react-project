@@ -46,6 +46,11 @@ class User
      */
     private $chat_status;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isAdmin;
+
     public function getId(): ?int
     {
         return $this->user_id;
@@ -119,6 +124,18 @@ class User
     public function setChatStatus(string $chat_status): self
     {
         $this->chat_status = $chat_status;
+
+        return $this;
+    }
+
+    public function getIsAdmin(): ?int
+    {
+        return $this->isAdmin;
+    }
+
+    public function setIsAdmin(int $isAdmin): self
+    {
+        $this->isAdmin = $isAdmin;
 
         return $this;
     }
