@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Open+Sans');
+
+div.container{
+    background-color: #fafafa ;
+    color: fff;
+    font-size: 40px; 
+}
+h1{
+    font-size: 4px;
+    font-family: 'Lato', sans-serif;
+    color: #4f2661;
+}
+
+h2{
+    font-size: 2px;
+    font-family: 'Lato', sans-serif;
+    color: #4f2661;
+}
+
+.header-card {
+    height: 10em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: url("movies-tiles.jpg");
+    color: #fafafa;
+    font-family: 'Lato', sans-serif;
+    border: solid fff;
+}
+.banner-middle {
+    height: 20em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: url("banner2.png");
+    color: #fafafa;
+    font-family: 'Lato', sans-serif;
+    border: solid fff;
+}
+
+.header-card-text {
+    margin-top: 5%;
+    text-align: center;
+    opacity: 0.8;
+    
+}
+.card-component{
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+    color: #fafafa;
+
+}
+.cards-container-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Open+Sans');
+
+div.container{
+  background-color: #fafafa ;
+  color: fff;
+  font-size: 40px; 
+  background-image: url("users.jpg");
+}
+h1{
+  font-size: 6px;
+  font-family: 'Lato', sans-serif;
+  color: #723e89;
+}
+
+h3{
+  font-size: 4px;
+  font-family: 'Lato', sans-serif;
+  color: #723e89;
+}
+
+.header-card {
+  height: 10em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: #fafafa;
+  font-family: 'Lato', sans-serif;
+  border: solid fff;
+}
+
+table {
+    font-family: 'Leto', sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

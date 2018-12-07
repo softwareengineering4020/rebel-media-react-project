@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Open+Sans');
+
+
+.footer-paper {
+    height: 25em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: url("banner.jpg");
+    color: #fff;
+}
+
+h1{
+    font-size: 4mc;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+
+.footer-paper-text {
+    margin-top: 5%;
+    text-align: center;
+    color: #fafafa;
+    /*opacity: 0.8;*/
+}
