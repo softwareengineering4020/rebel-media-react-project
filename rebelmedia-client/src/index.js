@@ -5,8 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import userReducer from './reducers/login';
-import './styles/app.scss';
-//import './index.css';
+
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 
