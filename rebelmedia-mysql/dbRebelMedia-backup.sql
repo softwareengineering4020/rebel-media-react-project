@@ -600,7 +600,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline',NULL),(17,'test1345','test238@test.com','test3245',NULL,NULL,NULL,NULL),(13,'test','test@test.com','test',NULL,NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL,NULL),(15,'test','test','test',NULL,NULL,NULL,NULL),(16,'test','test1234@test.com','test',NULL,NULL,NULL,NULL),(18,'Nikolas2','test@test.com','test2',NULL,NULL,NULL,NULL),(19,'test24552','test53e444@test.com','test',NULL,NULL,NULL,NULL),(20,'test2408028','test2425243@test.com','test422',NULL,NULL,NULL,NULL),(21,'test2424254','testuser24241@test.com','test25452',NULL,NULL,NULL,NULL),(22,'test2424254','test2454@test.com','test24',NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'Nikolas','test@test.com','test','','','offline',_binary ''),(17,'test1345','test238@test.com','test3245',NULL,NULL,NULL,NULL),(13,'test','test@test.com','test',NULL,NULL,NULL,NULL),(14,'test','test1234@test.com','test',NULL,NULL,NULL,NULL),(15,'test','test','test',NULL,NULL,NULL,NULL),(16,'test','test1234@test.com','test',NULL,NULL,NULL,NULL),(18,'Nikolas2','test@test.com','test2',NULL,NULL,NULL,NULL),(19,'test24552','test53e444@test.com','test',NULL,NULL,NULL,NULL),(20,'test2408028','test2425243@test.com','test422',NULL,NULL,NULL,NULL),(21,'test2424254','testuser24241@test.com','test25452',NULL,NULL,NULL,NULL),(22,'test2424254','test2454@test.com','test24',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -640,4 +640,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-06 17:25:35
+-- Dump completed on 2018-12-06 21:57:55
