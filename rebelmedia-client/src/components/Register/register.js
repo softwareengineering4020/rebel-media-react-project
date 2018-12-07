@@ -33,6 +33,7 @@ class Register extends Component {
             name: this.state.name,
             password: this.state.password
         }
+        
         fetch(API_BASE_URL + '/register', {
             method: 'POST',
             mode: 'cors',
