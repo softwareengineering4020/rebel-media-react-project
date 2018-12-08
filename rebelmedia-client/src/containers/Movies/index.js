@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Loader from '../../components/Loader';
-import Intro from '../../components/Intro';
+import Paper from '@material-ui/core/Paper';
 import MovieList from '../../components/MovieList';
 import { connect } from 'react-redux';
 
@@ -38,29 +38,44 @@ class Movies extends Component {
         console.log('user', user);
         return (
             <div>
-                <Intro message='Here you can find all of your most loved movies' {...this.props} />
-                Search: <input value={movieText} type="text" onChange={movies && this.handleInputChange} />
-                {
-                    isFetching
-                    &&
-                    <Loader />
-                }
-                {
-                    !isFetching
-                    &&
-                    <MovieList list={movies.results} />
-                }
-                {
-                    !isFetching && movies.length === 0 && movieText.trim() !== ''
-                    &&
-                    <p>No results found for that movie name</p>
-                }
-                {
-                    !isFetching && movieText.trim() === '' && movies.length === 0
-                    &&
-                    <p>Please enter a movie title</p>
-                }
+                <br />
+                <br />
+                <br />
+                <div class="container">
+                    <div>
+                        <Paper className='header-card' elevation={1} square>
+                            <div className='header-card-text'>
 
+                            </div>
+                        </Paper>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div className="movie-list-search">
+                    <h3><center>Find all your Favorite Movies and more...</center></h3>
+                    <h3><center>Search: <input value={movieText} type="text" onChange={movies && this.handleInputChange} /></center></h3>
+                    {
+                        isFetching
+                        &&
+                        <Loader />
+                    }
+                    {
+                        !isFetching
+                        &&
+                        <MovieList list={movies.results} />
+                    }
+                    {
+                        !isFetching && movies.length === 0 && movieText.trim() !== ''
+                        &&
+                        <p>No results found for that movie name</p>
+                    }
+                    {
+                        !isFetching && movieText.trim() === '' && movies.length === 0
+                        &&
+                        <p><center>Please enter a movie title</center></p>
+                    }
+                </div>
             </div>
         );
     }
@@ -68,6 +83,6 @@ class Movies extends Component {
 
 const mapStateToProps = state => ({
     user: state.user
-  });
+});
 
 export default connect(mapStateToProps)(Movies);

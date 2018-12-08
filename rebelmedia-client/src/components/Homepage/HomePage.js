@@ -25,34 +25,26 @@ class HomePage extends Component {
   render() {
     const { username } = this.state;
     return (
-      <div>
+      <div class="container">
+      <br />
+      <br />
+      <br />
         <div>
         <Paper className='header-card' elevation={1} square>
           <div className='header-card-text'>
-            {/*This is text that will be represented on the header card*/}
-            <Typography variant="h3" component="h3" color="inherit">
-            Rebel Media Entertainment
-            </Typography>
-            {/*This is text that will be represented on the header card*/}
-            <Typography variant="h5" component="h2" color="inherit">
-              Find collections of movies, television shows, and games to rate!
-            </Typography>
           </div>
         </Paper>
         </div>
           <div>
           <h1 style={{textAlign:'center'}}>Welcome to Rebel Media{username ? ', ' + username : ''}</h1>
-          <p>This is the body of the website</p>
-          <div className="cards-container-flex">
-          <Link to= '/featured'>
-          <CardComponent text="Featured"/>
-          </Link>
-          <Link to= '/rankings'> 
-          <CardComponent text="Rankings"/>
-          </Link>
-          <Link to= '/forums'>
-          <CardComponent text="Forum"/>
-          </Link>
+          <h3><center>Your Personal Entertainment Hub</center></h3>
+          <h5><center>Find All the Latest Top Hit Movies and TV Shows</center></h5>
+          <br />
+          <div class="container">
+            <div>
+              <div className="banner-middle">
+              </div>
+            </div>
           </div>
         <Footer />
         </div>

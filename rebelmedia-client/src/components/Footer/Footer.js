@@ -9,7 +9,6 @@ class Footer extends Component {
             <div>
                 <Paper className="footer-paper" square>
                     <Typography className="footer-paper-text" component="p" color="inherit">
-                        <p>This is a footer.</p>
                         <p>Copyright 2018. Rebel Media Entertainment Group. Software Engineering Project.</p>
                     </Typography>
                 </Paper>

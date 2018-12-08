@@ -1,18 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Open+Sans');
+
+
 .show-image {
-    height: 400px;
+    display: flex;
+    margin: auto; 
 }
 
 .movie-container {
     margin: auto;
-    border: 1px solid black;
-    width: 50%;
+    width: 90%;
     height: 100%;
 }
 
 .movie-container h1 {
+    font-size:40px;
+    font-family: 'Lato', sans-serif;
+    margin: auto;
     text-align: center;
 }
 
 .movie-genre {
+    font-size: 50px; 
+    font-family: 'Lato', sans-serif;
+    margin: auto;
     text-align: center;
 }
