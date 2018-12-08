@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300|Open+Sans');
 
 div.container{
-    background-color: #fff ;
-    color: #fff;
+    background-color: #fafafa ;
+    color: fff;
     font-size: 40px; 
 }
 h1{
@@ -22,17 +22,10 @@ h2{
     height: 10em;
     padding-top: 2em;
     padding-bottom: 2em;
-    background-image: url("movies-tiles.jpg");
-    color: #fff;
+    background-image: url("movies.jpg");
+    color: #fafafa;
     font-family: 'Lato', sans-serif;
-    border: solid #fff;
-    background-repeat: no-repeat;
-    background-size: 100%
-}
-
-.container {
-    height: 300px;
-    background-color: #fff;
+    border: solid fff;
 }
 
 .header-card-text {
@@ -52,4 +45,36 @@ h2{
     flex-direction: row;
     justify-content: space-around;
    
+}
+
+.movie-list-search {
+    padding-top: 300px;
+}
+
+.show-image {
+    padding-left: 200px; 
+    padding-right: 200px; 
+}
+
+.movie-container {
+    margin: auto;
+   /* border: .5px solid grey;*/
+    width: 90%;
+    height: 100%;
+}
+
+.movie-container h1 {
+    font-size:40px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 100px; 
+    padding-left: 200px; 
+    padding-right: 200px;
+}
+
+.movie-genre {
+    font-size: 50px; 
+    font-family: 'Lato', sans-serif;
+    padding-left: 100px; 
+    padding-left: 200px; 
+    padding-right: 200px;
 }

@@ -2,3 +2,38 @@
     list-style-type: none;
     padding-left: 0;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Open+Sans');
+
+
+.show-image {
+    padding-left: 200px; 
+    padding-right: 200px; 
+}
+
+.movie-container {
+    margin: auto;
+   /* border: .5px solid grey;*/
+    width: 90%;
+    height: 100%;
+}
+
+.movie-container h1 {
+    font-size:40px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 100px; 
+    padding-left: 200px; 
+    padding-right: 200px;
+}
+
+.movie-list {
+    margin: auto;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movie-list-search {
+    padding-top: 300px;
+}

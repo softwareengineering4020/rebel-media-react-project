@@ -73,8 +73,11 @@ class Admin extends Component {
 
         return (
             <div>
-                <div className="admin-container" disabled={!userFound}>
-                    <div className="admin-header"><h1>Hello {this.state.user && this.state.user}</h1></div>
+                <div className="admin-container">
+                    {!userFound &&
+                    <h1><center>You cannot view this page, sorry</center></h1>
+                    }
+                    {userFound && <div className="admin-header"><h1>Hello {this.state.user && this.state.user}</h1></div> }
                     <div className="list-of-users">
                         {isLoading && userFound && <h1>Loading users...</h1>}
                         {users && userFound &&
